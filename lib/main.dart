@@ -9,14 +9,30 @@ import './screens/filters_screen.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegan': false,
+    'vegetarian': false,
+  }; 
+
+  void _setFilters(Map<String, bool> filterData) {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Deli Meals',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        accentColor: Colors.amber,
+        accentColor: Colors.lightBlue,
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
