@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/meal_item.dart';
 import '../models/meal.dart';
 
-class CategoryMealsScreen  extends StatefulWidget {
+class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
 
   final List<Meal> availableMeals;
@@ -25,7 +25,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     //
     super.initState();
   }
-  
+
   @override
   void didChangeDependencies() {
     if (!_loadedInitData) {
@@ -46,9 +46,9 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
       displayedMeals.removeWhere((meal) => meal.id == mealId);
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle),
@@ -59,10 +59,9 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
             id: displayedMeals[index].id,
             title: displayedMeals[index].title,
             imageUrl: displayedMeals[index].imageUrl,
-            duration:  displayedMeals[index].duration,
-            affordability:  displayedMeals[index].affordability,
-            complexity:  displayedMeals[index].complexity,
-            removeItem: _removeMeal,
+            duration: displayedMeals[index].duration,
+            affordability: displayedMeals[index].affordability,
+            complexity: displayedMeals[index].complexity,
           );
         },
         itemCount: displayedMeals.length,

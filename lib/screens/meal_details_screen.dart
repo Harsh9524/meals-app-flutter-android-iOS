@@ -93,7 +93,7 @@ class MealDetailScreen extends StatelessWidget {
         child: Icon(
           isFavorite(mealId) ? Icons.star : Icons.star_border,
         ),
-        onPressed: toggleFavorite,
+        onPressed: () => toggleFavorite(mealId ),
       ),
     );
   }
